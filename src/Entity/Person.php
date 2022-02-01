@@ -16,8 +16,14 @@ class Person
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $surname;
+
     #[ORM\Column(type: 'integer')]
     private $age;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $address;
 
     public function getId(): ?int
     {
@@ -36,6 +42,18 @@ class Person
         return $this;
     }
 
+    public function getSurname(): ?string
+    {
+        return $this->surname;
+    }
+
+    public function setSurname(string $surname): self
+    {
+        $this->surname = $surname;
+
+        return $this;
+    }
+
     public function getAge(): ?int
     {
         return $this->age;
@@ -44,6 +62,18 @@ class Person
     public function setAge(int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }
